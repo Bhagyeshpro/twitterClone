@@ -1,6 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Feed from '../components/Feed'
+import Sidebar from '../components/Sidebar'
+import Widget from '../components/Widget'
 
 const Home: NextPage = () => {
   return (
@@ -12,13 +15,15 @@ const Home: NextPage = () => {
 
       <main>
         {/* Sidebar */}
+        <Sidebar/>
 
         {/* Feed */}
+        <Feed/>
 
         {/* Widget */}
+        <Widget/>
       </main>
 
-      <h1>Twitter Clone</h1>
     </div>
   )
 }
