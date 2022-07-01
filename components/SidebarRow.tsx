@@ -11,7 +11,7 @@ interface Props {
   return (
     <div className='flex max-w-fit space-x-2 items-center rounded-full px-4 py-3 transition-all hover:bg-gray-100 group '>
         <Icon className='h-6 w-6 group-hover:text-twitter'/>
-        <p className='group-hover:text-twitter font-semibold'>{title}</p>
+        <p className=' hidden text-base font-thin lg:text-xl md:inline-flex group-hover:text-twitter font-semibold'>{title}</p>
     </div>
   )
 }

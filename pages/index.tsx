@@ -7,13 +7,15 @@ import Widget from '../components/Widget'
 
 const Home: NextPage = () => {
   return (
-    <div className="">
+    // Max height screen for max height for  scrolling the page but Without scrolling screen
+    <div className="lg:max-w-4xl mx-auto overflow-hidden max-h-screen">
+
       <Head>
         <title>Twitter 2.0</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className='grid grid-cols-9'>
         {/* Sidebar */}
         <Sidebar/>
 
@@ -29,3 +31,18 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
