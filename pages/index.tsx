@@ -1,11 +1,18 @@
-import type { NextPage } from 'next'
+import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Feed from '../components/Feed'
 import Sidebar from '../components/Sidebar'
 import Widget from '../components/Widget'
+import { Tweet } from '../typing'
+import { fetchTweets } from '../utils/fetchTweets'
 
-const Home: NextPage = () => {
+interface Props {
+  tweets: Tweet[]
+}
+
+const Home = ({tweets} : Props) => {
+  
   return (
     // Max height screen for max height for  scrolling the page but Without scrolling screen
     <div className="lg:max-w-4xl mx-auto overflow-hidden max-h-screen">
@@ -15,12 +22,12 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className='grid grid-cols-9'>
+      <main className='grid grid-cols-9 '>
         {/* Sidebar */}
         <Sidebar/>
 
         {/* Feed */}
-        <Feed/>
+        <Feed tweets={tweets} />
 
         {/* Widget */}
         <Widget/>
@@ -32,6 +39,16 @@ const Home: NextPage = () => {
 
 export default Home
 
+export const getServerSideProps: GetServerSideProps = async (context) => {
+
+  const tweets = await fetchTweets();
+
+  return {
+    props:{
+      tweets,
+    },
+  }
+}
 
 
 

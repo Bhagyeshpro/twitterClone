@@ -6,7 +6,7 @@ function Tweetbox() {
   const [input, setInput] = useState<string>("")
 
   return (
-    <div className='flex space-x-2 p-5'>
+    <div className='flex space-x-2 p-5 '>
       <img className=' mt-5 h-10 w-10 rounded-full object-fill' src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" alt="" />
       <div className='flex flex-1 items-center pl-2'>
         <form className='flex flex-col flex-1'>
